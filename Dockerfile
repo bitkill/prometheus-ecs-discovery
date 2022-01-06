@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM --platform=$BUILDPLATFORM golang:1.17-alpine
+FROM golang:1.17-alpine AS build
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
@@ -12,5 +12,5 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o /bin/prometheus-ecs-discovery .
 
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates
-COPY --from=0 /bin/prometheus-ecs-discovery /bin/
+COPY --from=build /bin/prometheus-ecs-discovery /bin/
 ENTRYPOINT ["prometheus-ecs-discovery"]
