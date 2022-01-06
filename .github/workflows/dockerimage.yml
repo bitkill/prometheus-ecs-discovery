@@ -27,6 +27,9 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v1
+
     - name: Prepare      
       if: success()      
       id: prepare      
