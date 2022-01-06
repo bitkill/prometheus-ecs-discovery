@@ -41,18 +41,12 @@ jobs:
         echo ::set-output name=docker_image::${DOCKER_REGISTRY}/${DOCKER_IMAGE}        
         echo ::set-output name=version::${GITHUB_RUN_NUMBER}
 
-    - name: Build
+    - name: Build and push
+      if: success()
       run: |
         docker build \
         --tag ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }} \
+        --platform linux/amd64,linux/arm64/v8,linux/arm64/v8,linux/arm/v7 \
         --file ./Dockerfile \
         --output type=image,push=true . # will run buildx
     
-  #- name: Run Buildx (push image)      
-  #    if: success()
-  #    run: |
-  #      docker build \
-  #        --tag ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }} \
-  #        --platform linux/amd64,linux/arm64/v8,linux/arm64/v8,linux/arm/v7 \
-  #        --file ./Dockerfile \
-  #        --output type=image,push=true .
