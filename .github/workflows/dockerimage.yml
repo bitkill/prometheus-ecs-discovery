@@ -40,4 +40,4 @@ jobs:
         file: ./Dockerfile
         platforms: linux/amd64,linux/arm64
         push: true
-        tags: ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }},${{ steps.prepare.outputs.docker_image }}:latest
+        tags: ${{ DOCKER_IMAGE }}:${{ GITHUB_RUN_NUMBER }},${{ DOCKER_IMAGE }}:latest
