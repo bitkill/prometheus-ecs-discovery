@@ -48,5 +48,5 @@ jobs:
         --tag ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }} \
         --platform linux/amd64,linux/arm64/v8,linux/arm64/v8,linux/arm/v7 \
         --file ./Dockerfile \
-        --output type=image,push=true . # will run buildx
+        --output type=image,push=true # will run buildx
     
