@@ -40,4 +40,4 @@ jobs:
         file: ./Dockerfile
         platforms: linux/amd64,linux/arm64
         push: true
-        tags: ${{ DOCKER_IMAGE }}:${{ GITHUB_RUN_NUMBER }},${{ DOCKER_IMAGE }}:latest
+        tags: ${DOCKER_IMAGE}:${ITHUB_RUN_NUMBER},${DOCKER_IMAGE}:latest
