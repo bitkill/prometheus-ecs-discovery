@@ -47,7 +47,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }},${{ steps.prepare.outputs.docker_image }}::latest
+        tags: ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }},${{ steps.prepare.outputs.docker_image }}:latest
 
     #- name: Build and push
     #  if: success()
