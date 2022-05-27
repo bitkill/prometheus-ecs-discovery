@@ -1,5 +1,8 @@
 # Prometheus Amazon ECS discovery
 
+This is a fork of [teralytics/prometheus-ecs-discovery](https://github.com/teralytics/prometheus-ecs-discovery),
+only with more docker image architectures and dependabot updates.
+
 Prometheus has native Amazon EC2 discovery capabilities, but it does
 not have the capacity to discover ECS instances that can be scraped
 by Prometheus.  This program is a Prometheus File Service Discovery
