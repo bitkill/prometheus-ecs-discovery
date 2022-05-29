@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: ecs
+    file_sd_configs:
+      - files:
+          - ecs_file_sd.yml
+        refresh_interval: 1m
