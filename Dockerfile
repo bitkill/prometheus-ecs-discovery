@@ -11,6 +11,9 @@ COPY *.go go.mod go.sum ./
 RUN CGO_ENABLED=0 GOOS=linux go build -o /bin/prometheus-ecs-discovery .
 
 FROM alpine:latest
+
+LABEL org.opencontainers.image.description "Generates a prometheus config file for ecs containers"
+
 RUN apk --no-cache add ca-certificates
 COPY --from=build /bin/prometheus-ecs-discovery /bin/
 
