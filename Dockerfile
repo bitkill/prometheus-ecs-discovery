@@ -20,5 +20,5 @@ RUN apk --no-cache add ca-certificates
 COPY --from=build /bin/prometheus-ecs-discovery /bin/
 
 # Add sample config in case its needed
-COPY ./example/prometheus.yml /var/prom/prometheus.yml
+COPY ./example/prometheus.yml /etc/prometheus/
 ENTRYPOINT ["prometheus-ecs-discovery"]
