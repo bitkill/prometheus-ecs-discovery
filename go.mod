@@ -3,7 +3,7 @@ module github.com/teralytics/prometheus-ecs-discovery
 go 1.15
 
 require (
-	github.com/aws/aws-sdk-go-v2/config v1.15.9
+	github.com/aws/aws-sdk-go-v2/config v1.17.7
 	github.com/aws/aws-sdk-go-v2/credentials v1.12.20
 	github.com/aws/aws-sdk-go-v2/service/ec2 v1.61.0
 	github.com/aws/aws-sdk-go-v2/service/ecs v1.18.7
