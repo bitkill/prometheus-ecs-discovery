@@ -5,7 +5,7 @@ go 1.15
 require (
 	github.com/aws/aws-sdk-go-v2/config v1.18.0
 	github.com/aws/aws-sdk-go-v2/credentials v1.13.0
-	github.com/aws/aws-sdk-go-v2/service/ec2 v1.74.1
+	github.com/aws/aws-sdk-go-v2/service/ec2 v1.80.1
 	github.com/aws/aws-sdk-go-v2/service/ecs v1.18.24
 	github.com/aws/aws-sdk-go-v2/service/sts v1.17.2
 	github.com/aws/smithy-go v1.13.5
